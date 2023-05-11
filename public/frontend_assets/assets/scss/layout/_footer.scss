@@ -1,0 +1,148 @@
+/* Footer Section Style */
+.footer{
+    padding-top: toRem(80);
+    color: darken($color-light, $amount: 45);
+    background-color: var(--color-secondary, $color-secondary);
+    &__top{
+        @include min-desktop{
+            padding-bottom: toRem(30);
+        }
+    }
+    &__bottom{
+        border-top: 1px solid $color-dark;
+        padding-top: toRem(30);
+        padding-bottom: toRem(30);
+    }
+    &__block{
+        @include desktop{
+            margin-bottom: toRem(30);
+        }
+    }
+    &__logo{
+        display: inline-block;
+        margin-bottom: toRem(20);
+        &__image{
+            max-width: 100%;
+            max-height: toRem(40);
+        }
+    }
+    &__title{
+        color: $color-white;
+        font-size: toRem(16);
+        font-weight: 600;
+        margin-bottom: toRem(20);
+        text-transform: capitalize;
+    }
+    &__nav{
+        &__item{
+            margin-bottom: toRem(10);
+        }
+        &__text,
+        &__link
+        {
+            font-size: toRem(13);
+        }
+        &__text{
+            color: $color-light;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        &__link{
+            color: darken($color-light, $amount: 30);
+            text-transform: capitalize;
+            @extend %transition;
+            &:hover,
+            &:focus
+            {
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+    }
+    &__form{
+        @include min-mobile-xxs{
+            display: flex;
+        }
+        margin-bottom: toRem(30);
+        &__input{
+            color: $color-dark;
+            font-size: toRem(11);
+            width: 100%;
+            border: 0;
+            @include mobile-xxs{
+                padding: toRem(15);
+                border-radius: 3px;
+            }
+            @include min-mobile-xxs{
+                padding: 0 toRem(10);
+                border-radius: 3px 0 0 3px;
+            }
+            &::placeholder{
+                opacity: 1;
+            }
+            &:focus::placeholder{
+                opacity: 0;
+            }
+        }
+        &__btn{
+            display: inline-flex;
+            align-items: center;
+            @include mobile-xxs{
+                display: block;
+                width: 100%;
+            }
+            color: var(--color-btn-text, $color-white);
+            background-color: var(--color-primary, $color-primary);
+            border: 0;
+            font-size: toRem(12);
+            font-weight: 600;
+            padding: toRem(15);
+            text-transform: uppercase;
+            @include min-mobile-xxs{
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+            @include mobile-xxs{
+                border-radius: 3px;
+                margin-top: 8px;
+            }
+            &__text{
+                margin-right: 5px;
+            }
+
+            @extend %transition;
+            &:hover,
+            &:focus{
+                color: $color-white;
+                background-color: var(--color-btn-hover, darken($color-primary, $amount: 5));
+            }
+        }
+    }
+    &__app{
+        margin-bottom: toRem(8);
+        &:focus-visible{
+            outline: 2px solid rgba($color-light, $alpha: 0.5);
+        }
+        &-wrapper{
+            gap: 8px;
+        }
+        &__image{
+            max-height: toRem(50);
+        }
+    }
+    &__copyright{
+        color: darken($color-light, $amount: 45);
+        font-size: toRem(14);
+        font-weight: 500;
+        &__link{
+            color: var(--color-primary, $color-primary);
+            @extend %transition;
+            &:hover,
+            &:focus
+            {
+                color: var(--color-primary, $color-primary);
+                text-decoration: underline;
+            }
+        }
+    }
+}

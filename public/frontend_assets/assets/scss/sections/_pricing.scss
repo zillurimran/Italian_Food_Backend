@@ -1,0 +1,188 @@
+/* Pricing Section Style */
+.pricing-card{
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 40px 25px;
+    margin-bottom: 30px;
+}
+
+// .pricing-card--selected{
+//     position: relative;
+// }
+
+// .pricing-card--selected .pricing-card__band{
+//     position: absolute;
+//     display: block;
+//     text-align: center;
+//     top: 0;
+//     right: 0;
+//     color: #ffffff;
+//     background-color: $color-primary;
+//     font-weight: 700;
+//     padding: 5px;
+//     width: 123px;
+//     border-top-left-radius: 5px;
+//     border-top-right-radius: 5px;
+//     transform: translateX(43px) translateY(3px) rotate(45deg);
+// }
+
+// .pricing-card--selected .pricing-card__band::before,
+// .pricing-card--selected .pricing-card__band::after
+// {
+//     content: "";
+//     position: absolute;
+//     bottom: 0;
+//     transform: translateY(100%);
+//     border: 10px solid #d67000;
+//     border-bottom: 0;
+//     border-left-color: transparent;
+//     border-right-color: transparent;
+// }
+
+// .pricing-card--selected .pricing-card__band::before{
+//     left: 0;
+// }
+
+// .pricing-card--selected .pricing-card__band::after{
+//     right: 0;
+// }
+
+.pricing-card--featured{
+    color: #9d9d9d;
+    border-color: var(--color-secondary, $color-secondary);
+    background-color: var(--color-secondary, $color-secondary);
+}
+
+.pricing-card hr{
+    border-color: #e2e2e2;
+}
+
+.pricing-card--featured hr{
+    border-color: #4b4b4b;
+}
+
+.pricing-card__badge{
+    display: inline-block;
+    color: #333;
+    background-color: #f1f1f1;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 6px;
+}
+
+.pricing-card--featured .pricing-card__badge{
+    color: #ffffff;
+    background-color: #474747;
+}
+
+.pricing-card__title {
+    color: var(--color-title, $color-dark);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.pricing-card--featured .pricing-card__title{
+    color: #ffffff;
+}
+
+.pricing-card__title__sub-text{
+    font-size: 0.3em;
+    font-weight: 500;
+}
+
+.pricing-card__title__sub-text::before{
+    content: '/';
+    margin-right: 5px;
+}
+
+.pricing-card__text{
+    font-size: 14px;
+}
+
+.pricing-card__list{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.pricing-card__list.pricing-card__list--icon {
+    margin-top: 25px;
+    margin-bottom: 90px;
+}
+
+.pricing-card__list__item{
+    position: relative;
+    padding-left: 25px;
+    font-size: 14px;
+    color: var(--color-title, $color-dark);
+    font-weight: 500;
+}
+
+.pricing-card--featured .pricing-card__list__item{
+    color: #ffffff;
+}
+
+.pricing-card__list__item ~ .pricing-card__list__item{
+    margin-top: 20px;
+}
+
+.pricing-card__list__item__icon{
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.pricing-card--featured .pricing-card__list__item__icon{
+    color: var(--color-primary, $color-primary);
+}
+
+.pricing-plan-toggler{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0;
+    color: #ffffff;
+    background-color: var(--color-primary, $color-primary);
+}
+
+.pricing-plan-toggler__btn,
+.pricing-plan-toggler__btn__input,
+.pricing-plan-toggler__btn__label
+{
+    cursor: pointer;
+}
+
+.pricing-plan-toggler__btn,
+.pricing-plan-toggler__btn__label
+{
+    display: inline-block;
+}
+
+.pricing-plan-toggler__btn{
+    position: relative;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.pricing-plan-toggler__btn__input{
+    position: absolute;
+    opacity: 0;
+}
+
+.pricing-plan-toggler__btn__label{
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.pricing-plan-toggler__btn__input:checked + .pricing-plan-toggler__btn__label{
+    color: var(--color-title, $color-dark);
+    background-color: #ffffff;
+}
+
+.pricing-plan-toggler__btn__input:focus-visible + .pricing-plan-toggler__btn__label{
+    color: #ffffff;
+    background-color: var(--color-secondary, $color-secondary);
+}

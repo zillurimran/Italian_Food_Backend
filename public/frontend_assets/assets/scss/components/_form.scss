@@ -1,0 +1,111 @@
+/* Form Style */
+.form{
+    &-control{
+        font-size: toRem(12);
+        color: $color-dark;
+        box-shadow: none !important;
+        border-color: lighten($color-text, $amount: 45);
+        border-radius: 0;
+        padding: toRem(12) toRem(25);
+        height: auto;
+
+        &::placeholder{
+            color: $color-text;
+            opacity: 1;
+            text-shadow: none;
+        }
+
+        &:focus{
+            border-color: $color-text;
+
+            &::placeholder{
+                opacity: 0;
+            }
+        }
+
+        & ~ .alert{
+            margin-top: toRem(15);
+        }
+
+    }
+}
+
+.css-validation .form-control:not(:focus:invalid) ~ .alert{
+    display: none;
+}
+
+.dropdown-menu__form{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f4f4f4;
+
+    &__input{
+        font-size: toRem(14);
+        padding:  toRem(18);
+        padding-right: toRem(36);
+        border: 0;
+        background-color: transparent;
+        max-width: 100%;
+    }
+
+    &__btn{
+        position: absolute;
+        height: 100%;
+        padding: 2px toRem(10);
+        border: 0;
+        background-color: transparent;
+    }
+}
+
+.navbar__form{
+    display: flex;
+    @include min-desktop{
+        display: none;
+    }
+    padding: toRem(15) toRem(15) 0;
+
+    &__input{
+        width: 100%;
+        color: $color-light;
+        background-color: transparent;
+        font-size: toRem(12);
+        border: 1px solid #2e3237;
+        padding: toRem(10) toRem(15);
+    }
+
+    &__btn{
+        font-size: toRem(14);
+        color: $color-white;
+        background-color: $color-primary;
+        padding: 2px toRem(13);
+        border: 0;
+        border-radius: 4px;
+    }
+}
+
+.input-group{
+    .form-control{
+        z-index: 0 !important;
+
+        &:not(:first-child){
+            padding-left: toRem(45);
+        }
+        &:not(:last-child){
+            padding-right: toRem(45);
+        }
+    }
+    &__item{
+        position: absolute;
+        height: 100%;
+        display: flex;
+        z-index: 1;
+
+        &--left{
+            left: 0;
+        }
+        &--right{
+            right: 0;
+        }
+    }
+}

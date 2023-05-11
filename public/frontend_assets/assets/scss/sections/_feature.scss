@@ -1,0 +1,167 @@
+/* Feature Section Style */
+.feature{
+    &-figure{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__bg{
+            position: relative;
+            display: inline-block;
+            font-size: 0;
+            @include min-desktop-xxl{
+                transform: translateX(7%);
+            }
+            &__image{
+                position: relative;
+                font-size: 455px;
+                @include desktop-lg{
+                    font-size: 400px;
+                }
+                @include desktop{
+                    font-size: 310px;
+                }
+                max-width: 100%;
+                opacity: 0.9;
+                color: transparent;
+                transform: translateY(0);
+                // animation: float 7s cubic-bezier(0.61, 1, 0.88, 1) infinite;
+
+                @keyframes float {
+                    100%, 0%{
+                        transform: translateY(0);
+                    }
+                    50%{
+                        transform: translateY(-3%);
+                    }
+                }
+            }
+        }
+
+        &__main,
+        &__sub
+        {
+            position: absolute;
+
+            &__container{
+                transform: rotate(0);
+                // animation: rotated linear infinite;
+
+                @keyframes rotated {
+                    100%{
+                        transform: rotate(360deg);
+                    }
+                }
+
+                &__image{
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &__main{
+            &__container{
+                animation-duration: 100s;
+
+                &__image{
+                    @include min-desktop-lg{
+                        max-height: toRem(450);
+                    }
+                    @include desktop-lg{
+                        max-height: toRem(350);
+                    }
+                    @include desktop{
+                        max-height: toRem(300);
+                    }
+                    @include mobile-xxs{
+                        max-height: toRem(250);
+                    }
+                }
+            }
+        }
+
+        &__sub{
+            &--left{
+                left: 6%;
+                transform: translateY(80%);
+
+                .feature-figure__sub__container__image{
+                    max-height: 13rem;
+                    @include desktop-lg{
+                        max-height: 10rem;
+                    }
+                }
+            }
+            &--right{
+                right: 25%;
+                bottom: 5%;
+
+                .feature-figure__sub__container__image{
+                    max-height: 11rem;
+                    @include desktop-lg{
+                        max-height: 8rem;
+                    }
+                }
+            }
+            &__container{
+                animation-duration: 70s;
+            }
+        }
+    }
+
+    &__sub-title{
+        position: relative;
+        color: var(--color-primary, $color-primary);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        margin-top: toRem(20);
+        margin-bottom: 0.3rem;
+        text-transform: uppercase;
+
+        @include min-desktop-lg{
+            &::after{
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 2px;
+                margin: 0 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #cecece;
+            }
+        }
+    }
+
+    &__title{
+        color: var(--color-title, $color-dark);
+        font-weight: 800;
+    }
+
+    &__list{
+        padding-left: 0;
+        list-style-type: none;
+        margin-top: 30px;
+        margin-bottom: 50px;
+
+        &__item{
+            position: relative;
+            padding-left: 28px;
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: var(--color-primary, $color-primary);
+            }
+
+            & + .feature__list__item{
+                margin-top: 15px;
+            }
+        }
+    }
+}

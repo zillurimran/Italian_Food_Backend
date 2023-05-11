@@ -1,0 +1,30 @@
+.contact{
+    &__card{
+        background-color: $color-white;
+        padding: toRem(35) toRem(30);
+
+        &__item:not(:last-child){
+            margin-bottom: toRem(25);
+        }
+
+        &__title{
+            font-size: toRem(20);
+            font-weight: 600;
+            color: var(--color-title, $color-dark);
+            line-height: 1.1;
+        }
+
+        &__link{
+            display: block;
+            font-size: toRem(14);
+            @extend %transition;
+            &:hover,
+            &:active,
+            &:focus-visible
+            {
+                color: var(--color-primary, $color-primary);
+                text-decoration: underline;
+            }
+        }
+    }
+}

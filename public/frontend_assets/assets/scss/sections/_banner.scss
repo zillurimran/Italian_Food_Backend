@@ -1,0 +1,129 @@
+/* Banner Section Style */
+.banner{
+    background-color: var(--color-secondary, $color-secondary);
+    &__slide{
+        background-size: cover;
+        @include min-tablet{
+            background-position: center;
+        }
+        background-repeat: no-repeat;
+        @include desktop-xl{
+            padding-top: toRem(100);
+            padding-bottom: toRem(100);
+        }
+        @include min-desktop-xl{
+            padding-top: toRem(200);
+            padding-bottom: toRem(200);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image:
+                linear-gradient(
+                    to top,
+                    rgba($color-black, $alpha: 0.3),
+                    rgba($color-black, $alpha: 0.7)
+                );
+            z-index: -1;
+        }
+        &__content{
+            position: relative;
+            transform: translateX(-5%);
+            opacity: 0;
+            transition: all 0s linear;
+        }
+        &__sub-title{
+            color: var(--color-primary, $color-primary);
+            @include desktop-xl{
+                font-size: toRem(20);
+            }
+            @include min-desktop-xl{
+                font-size: toRem(26);
+            }
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        &__title,
+        &__text
+        {
+            color: $color-white;
+        }
+        &__title{
+            @include desktop-xl{
+                font-size: toRem(40);
+            }
+            @include min-desktop-xl{
+                font-size: toRem(50);
+            }
+            font-weight: 900;
+        }
+        &__text{
+            font-size: toRem(14);
+            font-weight: 600;
+            line-height: 1.86;
+        }
+    }
+    .slick{
+        &-active{
+            .banner__slide__content{
+                transform: translateX(0);
+                opacity: 1;
+                transition-duration: 0.3s;
+                transition-delay: 0.8s;
+            }
+        }
+        &__arrows{
+            top: 50%;
+            color: $color-white;
+            background-color: transparent;
+            font-size: toRem(45);
+            opacity: 0;
+            &--left{
+                @include desktop-xl{
+                    left: 1%;
+                }
+                @include min-desktop-xl{
+                    left: 5%;
+                }
+                transform: translateX(50%) translateY(-50%);
+            }
+            &--right{
+                @include desktop-xl{
+                    right: 1%;
+                }
+                @include min-desktop-xl{
+                    right: 5%;
+                }
+                transform: translateX(-50%) translateY(-50%);
+            }
+            &:hover,
+            &:focus-visible{
+                color: var(--color-primary, $color-primary);
+                background-color: transparent;
+            }
+        }
+        &-dots{
+            position: absolute;
+            bottom: 5%;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+    &:hover{
+        .slick{
+            &__arrows{
+                opacity: 1;
+                &--left{
+                    transform: translateX(0) translateY(-50%);
+                }
+                &--right{
+                    transform: translateX(0) translateY(-50%);
+                }
+            }
+        }
+    }
+}

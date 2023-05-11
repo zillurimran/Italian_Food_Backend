@@ -1,0 +1,31 @@
+/* Breadcrumb Section Style */
+.breadcrumb{
+    background-color: transparent;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    &-section{
+        border-top: 2px solid #eee;
+    }
+    &-item{
+        font-size: toRem(14);
+
+        &.active{
+            color: $color-dark;
+        }
+    }
+    &-link{
+        color: $color-text;
+        @extend %transition;
+        &:hover,
+        &:focus
+        {
+            color: $color-primary;
+        }
+    }
+}
+
+.breadcrumb-item + .breadcrumb-item::before{
+    content: '>';
+    color: lighten($color-text, $amount: 30);
+}

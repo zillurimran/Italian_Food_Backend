@@ -1,0 +1,22 @@
+.app{
+    &-card{
+        padding: toRem(50);
+        color: var(--color-text, $color-text);
+        background-color: $color-white;
+        border-radius: toRem(12);
+        box-shadow: 0 0 10px rgba($color-black, $alpha: 0.02);
+        &__title{
+            color: var(--color-title, $color-dark);
+            text-transform: uppercase;
+            font-weight: 700;
+            @include tablet{
+                font-size: toRem(24);
+            }
+        }
+
+        &__btn-group{
+            gap: 10px;
+            padding-top: 15px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+/* Sub Banner Section Style */
+.sub-banner{
+    color: $color-white;
+    padding: toRem(130) 0;
+    background-color: $color-secondary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__title{
+        font-size: toRem(38);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+    }
+
+    .breadcrumb{
+        &-item,
+        &-item::before,
+        &-link:not(:hover, :focus)
+        {
+            color: $color-white;
+        }
+    }
+}
